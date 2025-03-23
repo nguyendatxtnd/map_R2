@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <model name='model_robot'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.006545 1e-06 0.051824 0 -0 0</pose>
+        <mass>5.058</mass>
+        <inertia>
+          <ixx>0.0436785</ixx>
+          <ixy>1.17874e-08</ixy>
+          <ixz>-0.00561452</ixz>
+          <iyy>0.0708101</iyy>
+          <iyz>-7.98567e-07</iyz>
+          <izz>0.0704964</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0.03 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://model_robot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__caster_front_collision_collision_1'>
+        <pose>0.2 0 0.02 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__caster_front_collision_collision_2'>
+        <pose>-0.2 0 0.02 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__cover_link_collision_3'>
+        <pose>0 0 0.245 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://model_robot/meshes/cover_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__kinect_link_collision_4'>
+        <pose>0.3471 0.125 0.33225 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0943 0.25 0.0645</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__Hokuyo_link_collision_5'>
+        <pose>0.31 0 0.21 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0.03 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://model_robot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__caster_front_visual_visual_1'>
+        <pose>0.2 0 0.02 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__caster_front_visual_visual_2'>
+        <pose>-0.2 0 0.02 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__cover_link_visual_3'>
+        <pose>0 0 0.245 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://model_robot/meshes/cover_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__kinect_link_visual_4'>
+        <pose>0.3 0 0.3 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://model_robot/meshes/sensors/kinectv2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__Hokuyo_link_visual_5'>
+        <pose>0.31 0 0.21 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>2 2 2</scale>
+            <uri>model://model_robot/meshes/sensors/hokuyo.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='kinect_sensor' type='depth'>
+        <always_on>1</always_on>
+        <visualize>1</visualize>
+        <update_rate>5</update_rate>
+        <camera>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <format>R8G8B8</format>
+            <width>144</width>
+            <height>176</height>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>8</far>
+          </clip>
+        </camera>
+<plugin name="kinect_controller" filename="libgazebo_ros_camera.so">
+  <ros>
+    <namespace>/kinect</namespace>
+    <remapping>image_raw:=rgb/image_raw</remapping>
+    <remapping>camera_info:=rgb/camera_info</remapping>
+    <remapping>depth/image_raw:=depth/image_raw</remapping>
+    <remapping>depth/camera_info:=depth/camera_info</remapping>
+    <remapping>depth/points:=depth/points</remapping>
+  </ros>
+  <camera_name>kinect</camera_name>
+  <update_rate>10</update_rate>
+  <always_on>true</always_on>
+  <visualize>true</visualize>
+  <image_topic>image_raw</image_topic>
+  <camera_info_topic>camera_info</camera_info_topic>
+  <depth_image_topic>depth/image_raw</depth_image_topic>
+  <depth_image_camera_info_topic>depth/camera_info</depth_image_camera_info_topic>
+  <point_cloud_topic>depth/points</point_cloud_topic>
+  <frame_name>base_link</frame_name>
+</plugin>
+
+        <pose>0.3 0 0.3 0 -0 0</pose>
+      </sensor>
+      <sensor name='head_hokuyo_sensor' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>30</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>20</samples>
+              <resolution>1</resolution>
+              <min_angle>-1.5708</min_angle>
+              <max_angle>1.5708</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>10</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+<plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_ray_sensor.so">
+  <ros>
+    <namespace>/hokuyo</namespace>
+    <remapping>scan:=scan</remapping>
+  </ros>
+  <frame_name>base_link</frame_name>
+  <output_type>sensor_msgs/LaserScan</output_type>
+</plugin>
+
+        <pose>0.31 0 0.21 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='joint_left_wheel' type='revolute'>
+      <pose relative_to='base_link'>0 0.20918 0.05 -1.57265 0 0</pose>
+      <parent>base_link</parent>
+      <child>link_left_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_left_wheel'>
+      <pose relative_to='joint_left_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.145833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.145833</iyy>
+          <iyz>0</iyz>
+          <izz>0.125</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_left_wheel_fixed_joint_lump__wheel_left_collilink_left_wheel_collisionsion_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.03</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='link_left_wheel_visual_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.03</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint_right_wheel' type='revolute'>
+      <pose relative_to='base_link'>0 -0.20918 0.05 -1.57265 0 0</pose>
+      <parent>base_link</parent>
+      <child>link_right_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_right_wheel'>
+      <pose relative_to='joint_right_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.145833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.145833</iyy>
+          <iyz>0</iyz>
+          <izz>0.125</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_right_wheel_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.03</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link_right_wheel_visual_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.03</length>
+            <radius>0.05</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+      <ros>
+        <!-- <namespace>/tb3</namespace> -->
+      </ros>
+
+      <update_rate>20</update_rate>
+
+      <!-- wheels -->
+      <left_joint>joint_left_wheel</left_joint>
+      <right_joint>joint_right_wheel</right_joint>
+
+      <!-- kinematics -->
+      <wheel_separation>0.4</wheel_separation>
+      <wheel_diameter>0.1</wheel_diameter>
+
+      <!-- limits -->
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <command_topic>cmd_vel</command_topic>
+
+      <!-- output -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>false</publish_wheel_tf>
+
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+
+    </plugin>
+
+<plugin name="imu_plugin" filename="gazebo_ros_imu_sensor.so">
+  <ros>
+    <namespace>/</namespace>
+    <remapping>imu:=imu</remapping>
+  </ros>
+  <update_rate>50</update_rate>  <!-- Đặt tốc độ cập nhật phù hợp -->
+  <sensor_name>imu_sensor</sensor_name>
+  <frame_name>base_link</frame_name>
+  <xyz_offset>-0.184 0 -0.16</xyz_offset>
+  <rpy_offset>0 0 0</rpy_offset>
+</plugin>
+
+  </model>
+</sdf>
